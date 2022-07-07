@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Game</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="game-title">🎴 Matching Game</h1>
+  <div class="game-board-container">
+    <div class="game-board">
+    </div>
+    <!-- <p>Fazer modal de vitória com botão jogar de novo, que joga pro modal do começo</p> -->
+  </div>
+
+  <section class="initial-modal-container">
+    <div class="initial-modal">
+      <h3 class="titulo-modal">🎴 Matching Game</h3>
+      <label for="cards-quantity">Cards Quantity (max: 36)</label>
+      <input type="number" name="cards-quantity" id="cards-quantity" min="12" max="36" step="2" placeholder="12">
+      <span class="input-error-text"></span>
+      <a class="button" id="start-button">Start Game</a>
+    </div>
+  </section>
+
+  <section class="victory-modal-container">
+    <div class="victory-modal">
+      <h3 class="titulo-modal">🎴 Game Completed!</h3>
+      <a class="button" id="victory-button">Play Again!</a>
+    </div>
+  </section>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

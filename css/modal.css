@@ -1,0 +1,140 @@
+.initial-modal-container,
+.victory-modal-container {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.ativo .initial-modal,
+.victory-modal-container {
+    animation: modal 300ms forwards;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.initial-modal-container.ativo,
+.victory-modal-container.ativo {
+    display: grid;
+}
+
+.initial-modal,
+.victory-modal {
+    background-color: #121212;
+    border: 1px solid #050505;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    display: grid;
+    padding: 20px 30px 30px 30px;
+    position: relative;
+    grid-template-columns: minmax(auto, 400px);
+}
+
+.titulo-modal {
+    color: #FAFAFA;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+label {
+    color: #FAFAFA;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+input[type="number"] {
+    width: 100%;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    box-sizing: border-box;
+
+    background-color: #1E1E1E;
+    border: 1.5px solid #121212;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #D6D6D6;
+}
+
+.input-error-text {
+    margin-top: 4px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: crimson;
+    display: none;
+}
+
+.input-error-text.ativo {
+    display: block;
+}
+
+.initial-modal .button,
+.victory-modal .button {
+    background-color: tomato;
+    color: #FAFAFA;
+    
+    max-width: fit-content;
+    margin-top: 15px;
+    place-self: end;
+    padding: 8px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 1px solid #1E1E1E;
+    transition: 150ms;
+}
+
+.victory-modal .titulo-modal {
+    margin-bottom: 15px;
+    place-self: center;
+}
+
+.victory-modal .button {
+    place-self: center;
+}
+
+@media (pointer: fine) {
+    .initial-modal .button:hover,
+    .victory-modal .button:hover {
+        cursor: pointer;
+        background-color: #E34F34;
+    }
+}
+
+@media (max-width: 500px) {
+    .initial-modal,
+    .victory-modal {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .titulo-modal {
+        font-size: 1.6rem;
+    }
+}

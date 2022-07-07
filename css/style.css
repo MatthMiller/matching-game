@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #010101;
+}
+
+h1, 
+h2, 
+p,
+h3,
+label,
+input
+a {
+    margin: 0;
+}
+
+.game-title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    color: #FAFAFA;
+    margin: 30px auto;
+    margin-bottom: 40px;
+    max-width: max-content;
+
+    display: none;
+}
+
+.game-title.animar {
+    animation: startAnimation 200ms forwards;
+}
+
+.game-board.animar {
+    animation: startAnimation 400ms forwards;
+}
+
+@keyframes startAnimation {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.game-title.ativo {
+    display: flex;
+}
+
+.game-board-container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 2px solid #FFFFFF;
+    /* padding: 50px 25px; */
+    width: 108.5px;
+    height: 157px;
+    border-radius: 5px;
+    font-size: 2.5rem;
+
+    /* pós tirar padding e adicionar height e width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Tirar cursor de seleção de texto (emoji) */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+    transition: 150ms;
+}
+
+.card.correct {
+    border: 2px solid lawngreen;
+    box-shadow: 0 0 3px greenyellow;
+}
+
+.card.back {
+    background-color: #FFFFFF;
+    transition: 400ms;
+}
+
+.card.back:hover {
+    cursor: pointer;
+}
+
+.card.back[data-selected-card] {
+    cursor: default;
+}
+
+.card.fail {
+    border-color: crimson;
+}
+
+.non-clickable {
+    cursor: default;
+}
+
+@media (max-width: 1000px) {
+    .game-title {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        width: 88.5px;
+        height: 128px;
+        font-size: 2.1rem;
+    }
+}
