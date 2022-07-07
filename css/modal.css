@@ -137,4 +137,10 @@ input[type="number"] {
     .titulo-modal {
         font-size: 1.6rem;
     }
+
+    .initial-modal-container,
+    .victory-modal-container {
+        top: auto;
+        bottom: 75px;
+    }
 }
