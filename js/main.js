@@ -7,6 +7,7 @@ const initialModalContainer = document.querySelector('.initial-modal-container')
 const inputCardsQuantity = document.querySelector('#cards-quantity');
 const errorMessage = document.querySelector('.input-error-text');
 const victoryModalContainer = document.querySelector('.victory-modal-container');
+const htmlBody = document.querySelector('body');
 
 function openInitialModal() {
     initialModalContainer.classList.add('ativo');
@@ -22,6 +23,7 @@ function closeInitialModal() {
 
 function openVictoryModal() {
     victoryModalContainer.classList.add('ativo');
+    htmlBody.style.overflow = "hidden"; // scroll block
     const playAgainButton = document.querySelector('#victory-button')
     playAgainButton.addEventListener('click', playAgainCallback);
 }
@@ -32,13 +34,13 @@ function playAgainCallback() {
         actualCard.remove();
     }
     victoryModalContainer.classList.remove('ativo');
+    htmlBody.style.overflow = "auto";
     openInitialModal();
 }
 
 function initGame() {
     let cardQuantity = inputCardsQuantity.value || inputCardsQuantity.placeholder;
 
-    console.log(cardQuantity, inputCardsQuantity.max)
     if(cardQuantity >= 2 && cardQuantity <= +inputCardsQuantity.max) {
         errorMessage.classList.remove('ativo')
         gameTitle.classList.add('ativo');
